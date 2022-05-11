@@ -1,0 +1,53 @@
+﻿@model Candy
+
+<div class="mainDiv">
+
+
+    <div id="form12" runat="server" class="formStyle">
+
+        @*<h1>Добавленные конфетки: </h1>*@
+
+        <div id="kek" runat="server" visible="true">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Название: </th>
+                        <th>Количество: </th>
+                        <th>Цена: </th>
+                        <th>Категория: </th>
+                        <th>Наличие: </th>
+                        <th>Добавить в корзину</th>
+                    </tr>
+                </thead>
+
+
+                <tbody>
+                        <tr>
+                            <td>@Model.Name</td>
+                            <td>@Model.Price</td>
+                            <td>@Model.Amount</td>
+                            <td>@Model.Category</td>
+                            <td>@Model.Availability</td>
+                            <td>
+                                <form id="@Model.CandyID" asp-action="AddToCart" asp-controller="Cart" method="post">
+                                    <input type="hidden" asp-for="CandyID" />
+                                    <input type="hidden" name="returnUrl"
+                                           value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+
+                                    <span>
+                                        <button type="submit">В корзину</button>
+                                    </span>
+
+                                </form>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+
+
+</div>

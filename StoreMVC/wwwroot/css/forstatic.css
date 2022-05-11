@@ -1,0 +1,26 @@
+﻿/*body {
+    text-align: center;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 38%, #FFCC70 100%);
+    color: white;
+}*/
+
+.flexCont {
+    /*    display: flex;
+    flex-direction: column;*/
+    width: 300px;
+    text-align: center;
+    font-size: 22px;
+}
+
+html {
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #4158D0;
+    background-image: linear-gradient( 43deg, #4158D0 0%, #C850C0 38%, #FFCC70 100%);
+    color: white;
+}
+

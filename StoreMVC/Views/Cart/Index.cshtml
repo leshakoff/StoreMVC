@@ -1,0 +1,80 @@
+﻿@model CartIndexViewModel
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Candy List</title>
+    <link rel="stylesheet" href="~/css/styles.css" />
+</head>
+<body>
+    <div class="mainDiv">
+
+
+        <div runat="server" class="formStyle">
+
+            <h1>Корзина </h1>
+
+            <div runat="server" visible="true">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Количество: </th>
+                            <th>Конфета: </th>
+                            <th>Цена: </th>
+                            <th>Итого: </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var line in Model.Cart.Lines)
+                        {
+                            <tr>
+                                <td>@line.Quantity</td>
+                                <td>@line.Candy.Name</td>
+                                <td>@line.Candy.Price</td>
+                                <td>@((line.Quantity * line.Candy.Price))</td>
+                                <td>
+                                    <form asp-action="RemoveFromCart" method="post">
+                                        <input type="hidden" name="CandyID"
+                                               value="@line.Candy.CandyID" />
+                                        <input type="hidden" name="returnUrl"
+                                               value="@Model.ReturnUrl" />
+                                        <button type="submit">
+                                            Remove
+                                        </button>
+                                    </form>
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td>Итого:</td>
+                            <td>@Model.Cart.ComputeTotalValue()</td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+
+                <a href="@Model.ReturnUrl">Продолжить покупки</a>
+                <a class="btnbtn-primary" asp-action="Checkout"
+                   asp-controller="Order">
+                    Checkout
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,57 @@
+﻿@model Candy
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add Candy</title>
+    <link rel="stylesheet" href="~/css/styles.css" />
+</head>
+<body>
+    
+    <div class="forForm">
+
+        <h2>Add some candy...</h2>
+        <form asp-action="AddCandy" method="post">
+            <div asp-validation-summary="All" style="color:#85000c ; font-weight: 700;" >
+            </div>
+            <p>
+                <label asp-for="Name">Название:</label>
+                <input asp-for="Name" />
+            </p>
+            <p>
+                <label asp-for="Price">Цена:</label>
+                <input asp-for="Price" />
+            </p>
+            <p>
+                <label asp-for="Amount">Количество:</label>
+                <input asp-for="Amount" />
+            </p>
+            <p>
+                <label asp-for="Category">Укажите категорию товара:</label>
+                <select asp-for="Category">
+                    <option value="Шоколад">Шоколад</option>
+                    <option value="Карамель">Карамель</option>
+                    <option value="Ирис">Ирис</option>
+                    <option value="Мармелад">Мармелад</option>
+                </select>
+            </p>
+
+            <p>
+                <label asp-for="Availability">Укажите наличие товара:</label>
+                <select asp-for="Availability">
+                    <option value="В наличии">В наличии</option>
+                    <option value="Только оптом">Только оптом</option>
+                    <option value="Нет в наличии">Нет в наличии</option>
+                </select>
+
+            </p>
+            <button type="submit">Добавить конфетку</button>
+
+        </form>
+    </div>
+
+</body>
+</html>

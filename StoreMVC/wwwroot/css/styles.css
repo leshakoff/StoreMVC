@@ -1,0 +1,72 @@
+﻿form {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+    margin: 6px;
+    align-items: center;
+}
+
+
+input, select {
+    width: 189px;
+    height: 30px;
+    border: white 2px solid;
+    background-color: transparent;
+    color: white;
+}
+
+    select:focus {
+        color: black;
+    }
+
+a {
+    color: white !important;
+}
+
+    a:active {
+        color: white !important;
+    }
+
+    a::after {
+        color: white !important;
+    }
+
+body {
+    text-align: center;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 38%, #FFCC70 100%);
+    color: white;
+}
+
+.forForm {
+}
+
+label {
+    width: 250px;
+}
+
+button {
+    width: 250px;
+    height: 30px;
+    background: transparent;
+    border: white 2px solid;
+    color: white;
+    font-variant: all-small-caps;
+    font-weight: bold;
+}
+
+table, td, th {
+    border: 2px solid white;
+    margin: 2px;
+    padding: 6px;
+}
+
+table {
+    /* border-spacing: 7px 11px; */
+    border: none;
+    border-collapse: separate;
+    border-spacing: 6px;
+    /* padding: 12px; */
+}
+

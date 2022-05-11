@@ -1,0 +1,19 @@
+﻿@model Cart
+
+<div class="" style="
+    display: flex;
+    flex-direction: row;
+    align-items: center;">
+    @if (Model.Lines.Count() > 0)
+    {
+        <small class="nav-link text-white">
+            <b>Ваша корзина:</b>
+            @Model.Lines.Sum(x => x.Quantity) конфет(ы)
+            @Model.ComputeTotalValue().ToString("c")
+        </small>
+    }
+    <a class="nav-link text-white" asp-controller="Cart" asp-action="Index"
+       asp-route-returnurl="@ViewContext.HttpContext.Request.PathAndQuery()">
+        🛒
+    </a>
+</div>

@@ -1,0 +1,75 @@
+﻿@model CandyListViewModel
+
+    <!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Candy List</title>
+        <link rel="stylesheet" href="~/css/styles.css" />
+    </head>
+    <body>
+
+        @foreach (var p in Model.Candies)
+        {
+            @Html.Partial("CandyListCart", p);
+        }
+
+        @*<div class="mainDiv">
+
+
+            <div id="form12" runat="server" class="formStyle">
+
+                <h1>Добавленные конфетки: </h1>
+
+                <div id="kek" runat="server" visible="true">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Название: </th>
+                                <th>Количество: </th>
+                                <th>Цена: </th>
+                                <th>Категория: </th>
+                                <th>Наличие: </th>
+                                <th>Добавить в корзину</th>
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+                            @foreach (Candy c in Model)
+                            {
+                                <tr>
+                                    <td>@c.Name</td>
+                                    <td>@c.Price</td>
+                                    <td>@c.Amount</td>
+                                    <td>@c.Category</td>
+                                    <td>@c.Availability</td>
+                                    <td>
+                                        <form id="@c.CandyID" asp-action="AddToCart" asp-controller="Cart" method="post">
+                                            <input type="hidden" asp-for="@c.CandyID" />
+                                            <input type="hidden" name="returnUrl"
+                                                   value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+
+                                            <span>
+                                               <button type="submit">В корзину</button>
+                                            </span>
+
+                                        </form>
+                                    </td>
+                                </tr>
+                                }
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+
+
+        </div>*@
+    </body>
+    </html>
+
+
